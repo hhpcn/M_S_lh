@@ -86,7 +86,7 @@
 		<!-- 初始化时创建的连接数，应在minPoolSize与maxPoolSize之间取值。默认为3 -->
 		<property name="initialPoolSize"><value>10</value></property>
 		<!-- 最大空闲时间，超过空闲时间的连接将被丢弃。为0或负数则永不丢弃。默认为0 -->
-		<property name="maxIdleTime"><value>20</value></property>
+		<property name="maxIdleTime"><value>360</value></property>
 		<!-- JDBC的标准参数，用以控制数据源内加载的PreparedStatement数量。
 			但由于预缓存的Statement属 于单个Connection 而不是整个连接池。所以设置这个参数需要考虑到多方面的因素，
 			如果maxStatements与 maxStatementsPerConnection均为0，则缓存被关闭。默认为0 -->
@@ -127,6 +127,8 @@
 			    <prop key="hibernate.hbm2ddl.auto">update</prop>
 			    <prop key="hibernate.format_sql">true</prop>
 			    <prop key="hibernate.jdbc.batch_size">50</prop>
+			    <prop key="hibernate.autoReconnect">true</prop>
+			  	<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop> 
 			    <!-- 二级缓存 -->
 			<!--     <prop key="hibernate.cache.use_second_level_cache">true</prop>
 		    	<prop key="hibernate.cache.use_query_cache">false</prop>
