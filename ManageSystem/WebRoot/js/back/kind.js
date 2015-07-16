@@ -385,8 +385,8 @@ var scripts = [null,"/ManageSystem/common/ace/dist/js/jqGrid/jquery.jqGrid.min.j
 		
 		//点击对话框保存按钮，保存产品信息
 		$("#addKind").on("click",function(){
-			alert($("#addkindform").data('bootstrapValidator').validate());
-			return false;
+			//alert($("#addkindform").data('bootstrapValidator').validate());
+			//return false;
 			var kindName=$("#addkindform input[name='kindName']").val();
 			var pageUrl=$("#addkindform input[name='pageUrl']").val();
 			var categoryId=$("#addkindform select[name='category']").val();
