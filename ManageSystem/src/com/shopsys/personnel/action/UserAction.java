@@ -53,24 +53,24 @@ public class UserAction extends BaseAction {
         dataMap=new HashMap<String, Object>();
         dataMap.put("publicKeyMap", publicKeyMap);
 
-        System.out.println("public moduls:"+publicKeyMap.getModulus());
-        System.out.println("public exponent:"+publicKeyMap.getExponent());
+       // System.out.println("public moduls:"+publicKeyMap.getModulus());
+        //System.out.println("public exponent:"+publicKeyMap.getExponent());
         return "dataMap";
     }
 	
 	public String login(){
 		 RSAPrivateKey rp = RSAUtils.getDefaultPrivateKey();
-		 System.out.print("private modulus:");
+		 /*System.out.print("private modulus:");
 		 System.out.print(new  String (Hex.encodeHex(rp.getModulus().toByteArray())));
          System.out.println(" ");
 		 System.out.print("private exponent:");
 		 System.out.print(new  String (Hex.encodeHex(rp.getPrivateExponent().toByteArray())));
 		 System.out.println(" ");
-		 System.out.println(password);
+		 System.out.println(password);*/
 		 String pwd  = RSAUtils.decryptStringByJs(password);
-         System.out.println(pwd);
+        // System.out.println(pwd);
          String md5pwd=MD5Util.encode(pwd);
-         System.out.println("md5:"+md5pwd);
+         //System.out.println("md5:"+md5pwd);
 	     user=null;
 	     String hql="from User where userName = '"+userName+"' and password = '"+md5pwd+"'"; 
 	     user = userService.getByHQL(hql);
