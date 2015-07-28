@@ -5,7 +5,7 @@
 %>
 
 
-<title>产品管理</title>
+<title>产品类别管理</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <link rel="stylesheet" href="<%=basePath %>/common/ace/assets/css/jquery-ui.css" />
